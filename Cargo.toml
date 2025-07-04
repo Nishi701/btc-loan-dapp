@@ -1,8 +1,9 @@
 [workspace]
 members = [
-    "src/btc_token_canister",
-    "src/iusd_token_canister",
-    "src/loan_canister",
-    "src/oracle_canister",
+    "src/btc-loan-platform-backend/src/loan_canister",
+    "src/btc-loan-platform-backend/src/mock_ckbtc",
+    "src/btc-loan-platform-backend/src/mock_iusd",
+    "src/btc-loan-platform-backend/src/oracle_canister"
 ]
 resolver = "2"
+

@@ -1,62 +1,40 @@
 {
+  "version": 1,
   "canisters": {
     "loan_canister": {
       "type": "custom",
-      "candid": "src/loan_canister/loan_canister.did",
-      "wasm": "src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister_opt.wasm",
-      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/loan_canister/Cargo.toml && ic-wasm src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister.wasm -o src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister_opt.wasm metadata candid:service -f src/loan_canister/loan_canister.did",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "value": "src/loan_canister/loan_canister.did"
-        }
-      ]
+      "candid": "src/btc-loan-platform-backend/src/loan_canister/loan_canister.did",
+      "wasm": "src/btc-loan-platform-backend/src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister_opt.wasm",
+      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/btc-loan-platform-backend/src/loan_canister/Cargo.toml && ic-wasm src/btc-loan-platform-backend/src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister.wasm -o src/btc-loan-platform-backend/src/loan_canister/target/wasm32-unknown-unknown/release/loan_canister_opt.wasm metadata candid:service -f src/btc-loan-platform-backend/src/loan_canister/loan_canister.did"
     },
     "oracle_canister": {
       "type": "custom",
-      "candid": "src/oracle_canister/oracle_canister.did",
-      "wasm": "src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister_opt.wasm",
-      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/oracle_canister/Cargo.toml && ic-wasm src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister.wasm -o src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister_opt.wasm metadata candid:service -f src/oracle_canister/oracle_canister.did",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "value": "src/oracle_canister/oracle_canister.did"
-        }
-      ]
+      "candid": "src/btc-loan-platform-backend/src/oracle_canister/oracle_canister.did",
+      "wasm": "src/btc-loan-platform-backend/src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister_opt.wasm",
+      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/btc-loan-platform-backend/src/oracle_canister/Cargo.toml && ic-wasm src/btc-loan-platform-backend/src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister.wasm -o src/btc-loan-platform-backend/src/oracle_canister/target/wasm32-unknown-unknown/release/oracle_canister_opt.wasm metadata candid:service -f src/btc-loan-platform-backend/src/oracle_canister/oracle_canister.did"
     },
-    "btc_token_canister": {
+    "mock_ckbtc": {
       "type": "custom",
-      "candid": "src/btc_token_canister/btc_token_canister.did",
-      "wasm": "src/btc_token_canister/target/wasm32-unknown-unknown/release/btc_token_canister_opt.wasm",
-      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/btc_token_canister/Cargo.toml && ic-wasm src/btc_token_canister/target/wasm32-unknown-unknown/release/btc_token_canister.wasm -o src/btc_token_canister/target/wasm32-unknown-unknown/release/btc_token_canister_opt.wasm metadata candid:service -f src/btc_token_canister/btc_token_canister.did",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "value": "src/btc_token_canister/btc_token_canister.did"
-        }
-      ]
+      "candid": "src/btc-loan-platform-backend/src/mock_ckbtc/mock_ckbtc.did",
+      "wasm": "src/btc-loan-platform-backend/src/mock_ckbtc/target/wasm32-unknown-unknown/release/mock_ckbtc_opt.wasm",
+      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/btc-loan-platform-backend/src/mock_ckbtc/Cargo.toml && ic-wasm src/btc-loan-platform-backend/src/mock_ckbtc/target/wasm32-unknown-unknown/release/mock_ckbtc.wasm -o src/btc-loan-platform-backend/src/mock_ckbtc/target/wasm32-unknown-unknown/release/mock_ckbtc_opt.wasm metadata candid:service -f src/btc-loan-platform-backend/src/mock_ckbtc/mock_ckbtc.did"
     },
-    "iusd_token_canister": {
+    "mock_iusd": {
       "type": "custom",
-      "candid": "src/iusd_token_canister/iusd_token_canister.did",
-      "wasm": "src/iusd_token_canister/target/wasm32-unknown-unknown/release/iusd_token_canister_opt.wasm",
-      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/iusd_token_canister/Cargo.toml && ic-wasm src/iusd_token_canister/target/wasm32-unknown-unknown/release/iusd_token_canister.wasm -o src/iusd_token_canister/target/wasm32-unknown-unknown/release/iusd_token_canister_opt.wasm metadata candid:service -f src/iusd_token_canister/iusd_token_canister.did",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "value": "src/iusd_token_canister/iusd_token_canister.did"
-        }
-      ]
+      "candid": "src/btc-loan-platform-backend/src/mock_iusd/mock_iusd.did",
+      "wasm": "src/btc-loan-platform-backend/src/mock_iusd/target/wasm32-unknown-unknown/release/mock_iusd_opt.wasm",
+      "build": "cargo build --target wasm32-unknown-unknown --release --manifest-path src/btc-loan-platform-backend/src/mock_iusd/Cargo.toml && ic-wasm src/btc-loan-platform-backend/src/mock_iusd/target/wasm32-unknown-unknown/release/mock_iusd.wasm -o src/btc-loan-platform-backend/src/mock_iusd/target/wasm32-unknown-unknown/release/mock_iusd_opt.wasm metadata candid:service -f src/btc-loan-platform-backend/src/mock_iusd/mock_iusd.did"
     },
     "frontend": {
       "type": "assets",
-      "source": ["src/btc-loan-platform-frontend/dist"]
+      "source": [
+        "src/btc-loan-platform-frontend/dist"
+      ]
     }
   },
   "defaults": {
     "build": {
       "packtool": ""
     }
-  },
-  "version": 1
+  }
 }

@@ -1,0 +1,129 @@
+/* Root container */
+.loan-actions-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f4f7fa;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2b2b2b;
+}
+
+/* Back to dashboard button */
+.loan-actions-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #0077cc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* Page title */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Section styling */
+.action-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+/* Input box */
+.action-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.3s;
+  background-color: #fff;
+}
+
+.action-input:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* Action buttons */
+.action-button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.deposit {
+  background-color: #28a745;
+}
+
+.deposit:hover {
+  background-color: #218838;
+}
+
+.borrow {
+  background-color: #007bff;
+}
+
+.borrow:hover {
+  background-color: #0069d9;
+}
+
+.repay {
+  background-color: #dc3545;
+}
+
+.repay:hover {
+  background-color: #c82333;
+}
+
+/* Status messages */
+.status-message {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .loan-actions-container {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}

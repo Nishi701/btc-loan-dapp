@@ -53,17 +53,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "btc_token_canister"
-version = "0.1.0"
-dependencies = [
- "candid",
- "ic-cdk",
- "ic-cdk-macros",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "byteorder"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -219,8 +208,22 @@ checksum = "f56b30f8d4dc6488875e7fa5367309375c368c9f654931c0a5fe241775dc942a"
 dependencies = [
  "candid",
  "ic-cdk-executor",
- "ic-cdk-macros",
- "ic0",
+ "ic-cdk-macros 0.7.1",
+ "ic0 0.18.11",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "ic-cdk"
+version = "0.11.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "340ef878027636d5d28d1ae7556d6f507b81db917ce65752ca358cd857376fb7"
+dependencies = [
+ "candid",
+ "ic-cdk-executor",
+ "ic-cdk-macros 0.8.1",
+ "ic0 0.21.1",
  "serde",
  "serde_bytes",
 ]
@@ -246,10 +249,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "ic-cdk-macros"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b6295fd7389c198a97dd99b28b846e18487d99303077102d817eebbf6a924cd"
+dependencies = [
+ "candid",
+ "proc-macro2",
+ "quote",
+ "serde",
+ "serde_tokenstream",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "ic0"
 version = "0.18.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "576c539151d4769fb4d1a0c25c4108dd18facd04c5695b02cf2d226ab4e43aa5"
+
+[[package]]
+name = "ic0"
+version = "0.21.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a54b5297861c651551676e8c43df805dad175cc33bc97dbd992edbbb85dcbcdf"
 
 [[package]]
 name = "indexmap"
@@ -266,17 +289,6 @@ name = "itoa"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a5f13b858c8d314ee3e8f639011f7ccefe71f97f96e50151fb991f267928e2c"
-
-[[package]]
-name = "iusd_token_canister"
-version = "0.1.0"
-dependencies = [
- "candid",
- "ic-cdk",
- "ic-cdk-macros",
- "serde",
- "serde_json",
-]
 
 [[package]]
 name = "lazy_static"
@@ -301,9 +313,10 @@ name = "loan_canister"
 version = "0.1.0"
 dependencies = [
  "candid",
- "ic-cdk",
- "ic-cdk-macros",
+ "ic-cdk 0.10.2",
+ "ic-cdk-macros 0.7.1",
  "serde",
+ "serde_bytes",
  "serde_json",
 ]
 
@@ -312,6 +325,27 @@ name = "memchr"
 version = "2.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32a282da65faaf38286cf3be983213fcf1d2e2a58700e808f83f4ea9a4804bc0"
+
+[[package]]
+name = "mock_ckbtc"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "ic-cdk 0.10.2",
+ "ic-cdk-macros 0.7.1",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "mock_iusd"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "ic-cdk 0.11.7",
+ "serde",
+]
 
 [[package]]
 name = "num-bigint"
@@ -373,8 +407,8 @@ checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 name = "oracle_canister"
 version = "0.1.0"
 dependencies = [
- "ic-cdk",
- "ic-cdk-macros",
+ "ic-cdk 0.10.2",
+ "ic-cdk-macros 0.7.1",
 ]
 
 [[package]]

@@ -1,93 +1,108 @@
-// import { useState, useEffect } from 'react';
+// import { useEffect } from 'react';
 // import LandingPage from './LandingPage';
 // import { useAuth } from './auth/AuthProvider';
 // import Dashboard from './components/Dashboard';
-
+// import LoanActions from './components/LoanActions';
+// import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // function App() {
 //   const { isAuthenticated, login, logout, principal } = useAuth();
-//   const [step, setStep] = useState('landing');
 
-//   // Move to dashboard (or authenticated step) when logged in
 //   useEffect(() => {
-//     if (isAuthenticated) {
-//       setStep('dashboard'); // or any authenticated step name
+//     if (!isAuthenticated) {
+//       login(); // or prompt login somewhere
 //     }
 //   }, [isAuthenticated]);
 
-//   const handleGetStarted = () => {
-//     if (!isAuthenticated) {
-//       login();
-//     } else {
-//       setStep('dashboard');
-//     }
-//   };
-
-//   function shortenPrincipal(principal) {
-//   return principal
-//     ? `${principal.slice(0, 5)}...${principal.slice(-5)}`
-//     : '';
-// }
-
 //   return (
-//     <>
-//       {step === 'landing' && <LandingPage onGetStarted={handleGetStarted} />}
-
-//       {step === 'dashboard' && (
-//         <div style={{ textAlign: 'center', padding: '4rem' }}>
-//           <h2>Welcome, {shortenPrincipal(principal)}</h2>
-//           <button onClick={() => { logout(); setStep('landing'); }}>
-//             Logout
-//           </button>
-//           {/* 
-//             Here you can replace with your Dashboard component later 
-//           */}
-//           <p>This is your dashboard area. More features coming soon!</p>
-//         </div>
-//       )}
-//     </>
+//     <Router>
+//       <Routes>
+//         <Route
+//           path="/"
+//           element={
+//             isAuthenticated ? <Navigate to="/dashboard" /> : <LandingPage onGetStarted={login} />
+//           }
+//         />
+//         <Route
+//           path="/dashboard"
+//           element={
+//             isAuthenticated ? (
+//               <Dashboard principal={principal} onLogout={logout} />
+//             ) : (
+//               <Navigate to="/" />
+//             )
+//           }
+//         />
+//         <Route
+//           path="/loan-actions"
+//           element={
+//             isAuthenticated ? (
+//               <LoanActions principal={principal} />
+//             ) : (
+//               <Navigate to="/" />
+//             )
+//           }
+//         />
+//         {/* Add a catch-all redirect if you want */}
+//         <Route path="*" element={<Navigate to="/" />} />
+//       </Routes>
+//     </Router>
 //   );
 // }
 
 // export default App;
-
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import LandingPage from './LandingPage';
 import { useAuth } from './auth/AuthProvider';
 import Dashboard from './components/Dashboard';
+import LoanActions from './components/LoanActions';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
   const { isAuthenticated, login, logout, principal } = useAuth();
-  const [step, setStep] = useState('landing');
 
   useEffect(() => {
-    if (isAuthenticated) {
-      setStep('dashboard');
+    if (!isAuthenticated) {
+      login(); // Prompt login if not logged in
     }
   }, [isAuthenticated]);
 
-  const handleGetStarted = () => {
-    if (!isAuthenticated) {
-      login();
-    } else {
-      setStep('dashboard');
-    }
-  };
-
   return (
-    <>
-      {step === 'landing' && <LandingPage onGetStarted={handleGetStarted} />}
-
-      {step === 'dashboard' && (
-        <Dashboard
-          principal={principal}
-          onLogout={() => {
-            logout();
-            setStep('landing');
-          }}
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? <Navigate to="/dashboard" /> : <LandingPage onGetStarted={login} />
+          }
         />
-      )}
-    </>
+
+        <Route
+          path="/dashboard"
+          element={
+            isAuthenticated ? (
+              <Dashboard principal={principal} onLogout={logout} />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
+        />
+
+        <Route
+          path="/loan-actions"
+          element={
+            isAuthenticated ? (
+              <LoanActions principal={principal} />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
+        />
+
+        {/* Optional: catch-all */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 

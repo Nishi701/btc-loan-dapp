@@ -8,7 +8,7 @@
   gap: 2rem;
   background: #f9f9f9;
   min-height: 100vh;
-  overflow-x: hidden; /* prevent horizontal scroll on slide */
+  overflow-x: hidden; 
 }
 
 /* Animate left content sliding in from left */
@@ -50,10 +50,10 @@
 
 .highlight {
   background: linear-gradient(90deg, #4c00ff, #a600ff);
-  -webkit-background-clip: text;   /* for Safari/Chrome */
-  background-clip: text;           /* standard */
-  -webkit-text-fill-color: transparent;  /* for Safari/Chrome */
-  color: transparent;              /* fallback */
+  -webkit-background-clip: text;  
+  background-clip: text;          
+  -webkit-text-fill-color: transparent;  
+  color: transparent;         
   font-size: 3rem;
   font-weight: 800;
 }
@@ -130,14 +130,12 @@
 /* Pause animation on hover */
 .spinning-coin:hover {
   animation-play-state: paused;
-  transform: scale(1.02); /* optional small scale effect */
+  transform: scale(1.02); 
   filter: drop-shadow(0 10px 20px rgba(255, 153, 0, 0.4));
 }
 
 
-/*navbar*/
-
-/* Header - Aesthetic Glassy Navbar */
+/* Header  */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -170,7 +168,7 @@
   transition: color 0.3s ease;
 }
 
-/* Cool hover effect - gradient underline */
+/* hover effect */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -211,7 +209,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  color: #4c00ff;  /* Your brand purple */
+  color: #4c00ff;  
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -261,12 +259,10 @@
   }
 
   .nav-links {
-    display: none; /* Add a hamburger menu later if needed */
+    display: none; 
   }
 }
-
-
-/* Set global font for navbar & footer */
+/* navbar */
 .site-header,
 .site-footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -276,8 +272,8 @@
 
 /* Navbar font sizes and style */
 .nav-links a {
-  font-size: 1.1rem;     /* Professional and readable */
-  font-weight: 600;      /* Slightly bolder for nav */
+  font-size: 1.1rem;   
+  font-weight: 600;      
   color: #ffffffcc;
   transition: color 0.3s ease;
   padding: 6px 0;
@@ -285,7 +281,7 @@
 
 /* Navbar logo */
 .logo {
-  font-size: 1.9rem;    /* Clear and prominent */
+  font-size: 1.9rem;  
   font-weight: 700;
   letter-spacing: 0.05em;
   background: linear-gradient(to right, #a600ff, #4c00ff);
@@ -293,9 +289,8 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Footer font size and style */
 .site-footer {
-  font-size: 1rem;     /* Matches navbar but slightly smaller */
+  font-size: 1rem;   
   font-weight: 500;
   color: #ffffffcc;
   letter-spacing: 0.02em;

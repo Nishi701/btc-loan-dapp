@@ -1,0 +1,104 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a2540;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #00aaff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.back-btn:hover {
+  color: #0088cc;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #00aaff;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link, .logout-btn {
+  background: transparent;
+  border: 2px solid #00aaff;
+  color: #00aaff;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.nav-link:hover, .logout-btn:hover {
+  background-color: #00aaff;
+  color: white;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 64px; /* height of header approx */
+    right: 0;
+    background-color: #0a2540;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    width: 200px;
+    height: calc(100vh - 64px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.3);
+  }
+
+  .header-nav.open {
+    transform: translateX(0);
+  }
+
+  .nav-link, .logout-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+  }
+}

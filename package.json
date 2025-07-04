@@ -5,14 +5,16 @@
   },
   "name": "btc-loan-platform",
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "prebuild": "npm run prebuild --workspaces --if-present",
-    "pretest": "npm run prebuild --workspaces --if-present",
-    "start": "npm start --workspaces --if-present",
-    "test": "npm test --workspaces --if-present"
+    "prebuild": "dfx generate oracle_canister && dfx generate mock_iusd && dfx generate mock_ckbtc && dfx generate loan_canister",
+    "build": "npm --prefix src/btc-loan-platform-frontend run build",
+    "start": "npm --prefix src/btc-loan-platform-frontend start",
+    "test": "npm --prefix src/btc-loan-platform-frontend test"
   },
   "type": "module",
   "workspaces": [
     "src/btc-loan-platform-frontend"
-  ]
+  ],
+  "dependencies": {
+    "react-router-dom": "^7.6.3"
+  }
 }
