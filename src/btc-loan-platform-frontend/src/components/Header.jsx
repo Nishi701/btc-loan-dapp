@@ -29,12 +29,14 @@ const Header = ({ title, showBack = false, onLogout }) => {
       </button>
 
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <button onClick={() => handleNavigate('/dashboard')} className="nav-link">
-          Dashboard
-        </button>
+
         <button onClick={() => handleNavigate('/loan-actions')} className="nav-link">
           Loan Actions
         </button>
+        <button onClick={() => handleNavigate('/mint-tokens')} className="nav-link">
+          Mint Tokens
+        </button>
+
         {onLogout && (
           <button onClick={onLogout} className="logout-btn">
             Logout

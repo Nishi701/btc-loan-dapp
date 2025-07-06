@@ -1,4 +1,3 @@
-// src/auth/AuthProvider.jsx
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { AuthClient } from '@dfinity/auth-client';
 
@@ -8,6 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [authClient, setAuthClient] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [principal, setPrincipal] = useState(null);
+  const [loading, setLoading] = useState(true);  // Add loading flag
 
   useEffect(() => {
     const initAuth = async () => {
@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
         setPrincipal(client.getIdentity().getPrincipal().toText());
       }
+      setLoading(false);  // Done loading after auth init
     };
     initAuth();
   }, []);
@@ -37,10 +38,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, principal, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, principal, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => useContext(AuthContext);
+

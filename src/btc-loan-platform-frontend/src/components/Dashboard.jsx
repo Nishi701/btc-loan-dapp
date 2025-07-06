@@ -20,7 +20,10 @@ const Dashboard = ({ principal, onLogout }) => {
     ? `${principal.slice(0, 5)}...${principal.slice(-5)}`
     : "";
 
+
   const navigate = useNavigate();
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +48,6 @@ const Dashboard = ({ principal, onLogout }) => {
 
       <main className="dashboard-container">
         <h2 className="dashboard-title">Welcome, {shortPrincipal}</h2>
-
         <div className="loan-actions-button-wrapper">
           <button
             className="navigate-button"

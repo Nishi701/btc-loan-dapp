@@ -29,7 +29,10 @@
       "type": "assets",
       "source": [
         "src/btc-loan-platform-frontend/dist"
-      ]
+      ],
+      "routes": {
+        "/**": "index.html"
+      }
     }
   },
   "defaults": {

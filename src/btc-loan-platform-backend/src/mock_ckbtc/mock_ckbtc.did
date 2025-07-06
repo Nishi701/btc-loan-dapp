@@ -21,5 +21,6 @@ service : {
   icrc1_transfer: (TransferArg) -> (TransferResult);
   icrc1_transfer_from: (principal, TransferArg) -> (TransferResult);
   icrc1_balance_of: (Account) -> (nat) query;
+  allowance: (principal, principal) -> (nat) query;
   mint: (principal, nat) -> ();
 };
